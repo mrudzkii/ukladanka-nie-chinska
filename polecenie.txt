@@ -1,0 +1,53 @@
+Uwaga 2: Jeśli chce się skorzystać z typu __int128 i mieć program działający z opcją --pedantic, należy napisać:
+__extension__ typedef __int128 int128;
+Po czym korzystać z typu int128.
+
+Uwaga 3: Oficjalne testy do zadania są niezłe, choć niekoniecznie najtrudniejsze możliwe :)
+
+Uwaga 4: Klocki są niepuste.
+
+Dane są początkowo pusta plansza o wymiarach n x m złożona z n*m pól oraz k klocków. Każdy z klocków ma przypisany identyfikator określony wielką literą alfabetu angielskiego i stanowi spójny zbiór pól, przy czym dwa pola sąsiadują ze sobą wtedy, gdy mają wspólny bok. Napisz program, który sprawdzi, czy na planszy można położyć pewną liczbę klocków tak, by każde pole planszy było pokryte przez dokładnie jeden klocek. Żaden klocek nie może wystawać poza planszę. Każdego klocka można użyć co najwyżej raz. Klocki można obracać o wielokrotności 90 stopni. Jeśli planszę da się pokryć, wynikiem ma być pokrycie planszy.
+
+Możesz założyć, że 1≤n,m,k≤10
+. W testach wartych łącznie 4 punkty zachodzi dodatkowo k≤8. Wśród nich, w testach wartych łącznie 3 punkty zachodzi dodatkowo k≤5
+
+.
+
+Wejście
+
+W pierwszym wierszu znajdują się liczby n, m, k rozdzielone spacjami. Dalej następuje opis k klocków. i-ty klocek jest opisany jako n wierszy po m znaków, bez spacji; kropka oznacza pole nienależące do klocka, a i-ta wielka litera alfabetu oznacza pole należące do klocka. Między opisami kolejnych klocków jest wiersz przerwy.
+
+Wyjście
+
+W pierwszym wierszu wyjścia powinno znaleźć się jedno słowo TAK lub NIE. Słowo TAK oznacza, że żądane pokrycie planszy istnieje, a słowo NIE, że nie istnieje. Jeśli odpowiedzią jest TAK, to dalej powinien następować opis pokrytej planszy, w postaci n wierszy po m znaków. Każdy ze znaków powinien być wielką literą oznaczającą identyfikator klocka, który ma pokryć dane pole. Jeśli jest wiele poprawnych sposobów pokrycia, należy wypisać jeden, dowolny z nich.
+
+Przykładowe wejście
+
+4 5 4
+A....
+A....
+AAAAA
+.....
+
+..B..
+.BBB.
+.BBB.
+.....
+
+.....
+.CC..
+.CC..
+.....
+
+.....
+.DD..
+..D..
+.DDD.
+
+Przykładowe wyjście
+
+TAK
+AAAAA
+BBDDA
+BBBDA
+BBDDD
